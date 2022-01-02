@@ -51,4 +51,4 @@ jobs:
           commit_message: commit notes
           
       - name: test2
-        run: pwd && ls /home/runner/work/notes/public/
+        run: pwd && ls /home/runner/work/notes/notes/public/
