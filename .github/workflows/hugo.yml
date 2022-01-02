@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: pull theme
-        run: ls themes/paper
+        run: git submodule --init --recursive && tree
       
       # Runs a single command using the runners shell
       - name: hugo
