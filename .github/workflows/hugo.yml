@@ -41,8 +41,6 @@ jobs:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           # Set a target branch for deployment.
           publish_branch: pages
-          # Set an input directory for deployment.
-          publish_dir: public
           # Set Git user.name
           user_name: johnnliu
           # Set Git user.email
