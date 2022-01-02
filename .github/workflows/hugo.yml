@@ -38,7 +38,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           # Set a generated GITHUB_TOKEN for pushing to the remote branch.
-          github_token: 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
+          github_token: ${{ secrets.ACCESS_TOKEN }}
           # Set a target branch for deployment.
           publish_branch: pages
           # Set an input directory for deployment.
