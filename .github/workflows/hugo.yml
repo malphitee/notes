@@ -27,7 +27,7 @@ jobs:
       - name: hugo
         uses: klakegg/actions-hugo@1.0.0
         with:
-          target: notes/public
+          target: public
           
       - name: debug_1
         run: pwd && ls
