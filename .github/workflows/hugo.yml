@@ -40,9 +40,13 @@ jobs:
           user_name: johnnliu
           user_email: 317126927@qq.com
           commit_message: commit notes
-          
-      - name: debug_1
-        run: pwd && ls
-        
-      - name: clone page branch
-        run: tree
+
+      - name: serverchan notify
+        uses: yakumioto/serverchan-action@v2
+        with:
+          # Secret key
+          key: SCT2040TZeiTZe7RQmKZDNWo19PJTUuw
+          # Message title
+          text: 推送文章至github pages成功
+          # Message content
+          desp: '链接: https://malphitee.github.io/notes/'
