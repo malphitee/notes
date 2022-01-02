@@ -29,26 +29,7 @@ jobs:
         with:
           target: notes/public
           
-      - name: test1
-        run: pwd && ls 
-          
-      - name: GitHub Pages action
-        # You may pin to the exact commit or the version.
-        # uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
-        uses: peaceiris/actions-gh-pages@v3.7.3
-        with:
-          # Set a generated GITHUB_TOKEN for pushing to the remote branch.
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          # Set a target branch for deployment.
-          publish_branch: pages
-          publish_dir: public
-          destination_dir: public
-          # Set Git user.name
-          user_name: johnnliu
-          # Set Git user.email
-          user_email: 317126927@qq.com
-          # Set a custom commit message with a triggered commit hash
-          commit_message: commit notes
-          
-      - name: test2
-        run: pwd && ls /home/runner/work/notes/notes/public/
+      - name: debug_1
+        run: pwd && ls
+        
+      - name: clone page branch
