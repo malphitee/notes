@@ -29,6 +29,9 @@ jobs:
         with:
           target: public
           
+      - name: test
+        run: pwd && ls
+          
       - name: GitHub Pages action
         # You may pin to the exact commit or the version.
         # uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
