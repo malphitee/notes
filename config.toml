@@ -1,4 +1,4 @@
 baseURL = 'https://malphitee.github.io/notes/'
 languageCode = 'zh-CN'
-title = ''
+title = 'My New Hugo Site'
 theme = 'paper'
