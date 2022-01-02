@@ -49,4 +49,4 @@ jobs:
           # Message title
           text: 推送文章至github pages成功
           # Message content
-          desp: '链接: https://malphitee.github.io/notes/'
+          desp: https://malphitee.github.io/notes/
