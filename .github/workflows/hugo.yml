@@ -33,4 +33,4 @@ jobs:
         run: pwd && ls
         
       - name: clone page branch
-        run: ls
+        run: tree
