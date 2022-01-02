@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: pull theme
-        run: git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
+        run: tree
       
       # Runs a single command using the runners shell
       - name: hugo
