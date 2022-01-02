@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: pull theme
-        run: tree
+        run: git submodule update && tree
       
       # Runs a single command using the runners shell
       - name: hugo
