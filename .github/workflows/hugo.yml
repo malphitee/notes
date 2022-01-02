@@ -31,6 +31,15 @@ jobs:
         uses: klakegg/actions-hugo@1.0.0
         with:
           target: public
+      
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: public
+          user_name: johnnliu
+          user_email: 317126927@qq.com
+          commit_message: commit notes
           
       - name: debug_1
         run: pwd && ls
