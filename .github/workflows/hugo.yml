@@ -27,5 +27,4 @@ jobs:
       - name: hugo
         uses: klakegg/actions-hugo@1.0.0
         with:
-          source: content
           target: public
