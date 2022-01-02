@@ -1,4 +1,4 @@
 baseURL = 'https://malphitee.github.io/notes/'
 languageCode = 'zh-CN'
-title = 'LiuQ's Notes'
+title = 'LiuQ Notes'
 theme = 'paper'
