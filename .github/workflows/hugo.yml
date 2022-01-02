@@ -48,5 +48,3 @@ jobs:
           key: SCT2040TZeiTZe7RQmKZDNWo19PJTUuw
           # Message title
           text: 推送文章至github pages成功
-          # Message content
-          desp: https://malphitee.github.io/notes/
