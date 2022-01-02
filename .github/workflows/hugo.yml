@@ -40,11 +40,3 @@ jobs:
           user_name: johnnliu
           user_email: 317126927@qq.com
           commit_message: commit notes
-
-      - name: serverchan notify
-        uses: yakumioto/serverchan-action@v2
-        with:
-          # Secret key
-          key: SCT2040TZeiTZe7RQmKZDNWo19PJTUuw
-          # Message title
-          text: 推送文章至github pages成功
