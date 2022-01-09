@@ -69,5 +69,19 @@ date: 2022-01-09T20:00:28+08:00
 >   # 退出时删除tmp目录
 >   clean_on_exit = false
 > ```
+
+
+
+---
+
+
+
+### Error Lens
+
+>  作用： 可以更明确的提示错误
 >
-> 
+> 安装方法： 在vscode中安装插件
+>
+> 效果展示：
+>
+> ![](https://picgo-1251335448.cos.ap-shanghai.myqcloud.com//20220110001426.png)
