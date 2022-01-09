@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+<html lang="zh-CN">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>Go的Init方法 - LiuQ Notes</title>
+
+  
+  
+  <meta name="description" content="Go中的init方法 go中有两个特殊的函数：
+ main包中的main函数，是go可执行程序的入口函数 包级别的init函数  init 函数是一个无参数，无返回值的函数
+func init() { } Init 函数有以下逻辑：
+  如果一个包定义了init函数，go运行时会负责在该包初始化时调用它的init函数
+  init不能被显式调用，否则在编译期间会报错
+  多个包的情况下，在初始化该包时，Go运行时会按照一定次序逐一顺序的调用该包的init函数
+  每个包内的init函数，在整个Go程序的生命周期内仅会被执行一次
+  一般来说，先被传递给Go编译器的go源文件中的init函数先被执行， main.go作为起点
+  同一个源文件中的多个init函数按声明顺序依次执行
+  init的加载顺序如下
+ 来源：https://learnku.com/courses/go-api/1.17/config-package/11880
+解读：
+ 如果一个包导入了其他包，则首先初始化导入的包 然后初始化当前包的常量 接下来初始化当前包的变量 最后，调用当前包的init函数     " />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://malphitee.github.io/notes/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="https://malphitee.github.io/notes/an-old-hope.min.css" />
+  <script
+    defer
+    src="https://malphitee.github.io/notes/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="https://malphitee.github.io/notes/theme.png" />
+
+  
+
+  
+  <link rel="icon" href="https://malphitee.github.io/notes/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://malphitee.github.io/notes/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.91.2" />
+
+  
+  
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="false">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="https://malphitee.github.io/notes/">LiuQ Notes</a><a class="btn-dark"></a>
+  </p>
+  
+
+  <script>
+    let bodyClx = document.body.classList;
+    let btnDark = document.querySelector('.btn-dark');
+    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let darkVal = localStorage.getItem('dark');
+
+    let setDark = (isDark) => {
+      bodyClx[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    };
+
+    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
+    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+
+    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
+    sysDark.addEventListener('change', (event) => setDark(event.matches));
+  </script>
+
+  
+  
+
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-title">
+    <p>
+      <time>Jan 10, 2022</time>
+      
+    </p>
+    <h1>Go的Init方法</h1>
+  </header>
+  <section class="post-content"><h3 id="go中的init方法">Go中的init方法</h3>
+<p>go中有两个特殊的函数：</p>
+<ol>
+<li>main包中的main函数，是go可执行程序的入口函数</li>
+<li><code>包级别</code>的init函数</li>
+</ol>
+<p>init 函数是一个无参数，无返回值的函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">init</span>() {
+  
+}
+</code></pre></div><p>Init 函数有以下逻辑：</p>
+<ol>
+<li>
+<p>如果一个包定义了init函数，go运行时会负责在该包<code>初始化</code>时调用它的init函数</p>
+</li>
+<li>
+<p>init不能被显式调用，否则在编译期间会报错</p>
+</li>
+<li>
+<p>多个包的情况下，在初始化该包时，Go运行时会按照一定次序逐一顺序的调用该包的init函数</p>
+</li>
+<li>
+<p>每个包内的init函数，在整个Go程序的生命周期内仅会被执行一次</p>
+</li>
+<li>
+<p>一般来说，先被传递给Go编译器的go源文件中的init函数先被执行， main.go作为起点</p>
+</li>
+<li>
+<p>同一个源文件中的多个init函数按声明顺序依次执行</p>
+</li>
+<li>
+<p>init的加载顺序如下</p>
+<blockquote>
+<p><img src="https://cdn.learnku.com/uploads/images/202007/13/1/hVMYyqi6EU.png!large" alt="img"></p>
+<p>来源：<a href="https://learnku.com/courses/go-api/1.17/config-package/11880">https://learnku.com/courses/go-api/1.17/config-package/11880</a></p>
+<p>解读：</p>
+<ol>
+<li>如果一个包导入了其他包，则首先初始化导入的包</li>
+<li>然后初始化当前包的常量</li>
+<li>接下来初始化当前包的变量</li>
+<li>最后，调用当前包的init函数</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="post-nav">
+     
+    <a class="next" href="https://malphitee.github.io/notes/posts/go-develop-tools/"><span>Go开发实用工具</span><span>→</span></a>
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2022 <a href="https://malphitee.github.io/notes/">LiuQ Notes</a></p>
+  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
+  <p>
+    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
+  </p>
+</footer>
+
+  </body>
+</html>

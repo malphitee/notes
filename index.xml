@@ -6,7 +6,28 @@
     <description>Recent content on LiuQ Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 09 Jan 2022 20:00:28 +0800</lastBuildDate><atom:link href="https://malphitee.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jan 2022 01:38:24 +0800</lastBuildDate><atom:link href="https://malphitee.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go的Init方法</title>
+      <link>https://malphitee.github.io/notes/posts/go-init_func/</link>
+      <pubDate>Mon, 10 Jan 2022 01:38:24 +0800</pubDate>
+      
+      <guid>https://malphitee.github.io/notes/posts/go-init_func/</guid>
+      <description>Go中的init方法 go中有两个特殊的函数：
+ main包中的main函数，是go可执行程序的入口函数 包级别的init函数  init 函数是一个无参数，无返回值的函数
+func init() { } Init 函数有以下逻辑：
+  如果一个包定义了init函数，go运行时会负责在该包初始化时调用它的init函数
+  init不能被显式调用，否则在编译期间会报错
+  多个包的情况下，在初始化该包时，Go运行时会按照一定次序逐一顺序的调用该包的init函数
+  每个包内的init函数，在整个Go程序的生命周期内仅会被执行一次
+  一般来说，先被传递给Go编译器的go源文件中的init函数先被执行， main.go作为起点
+  同一个源文件中的多个init函数按声明顺序依次执行
+  init的加载顺序如下
+ 来源：https://learnku.com/courses/go-api/1.17/config-package/11880
+解读：
+ 如果一个包导入了其他包，则首先初始化导入的包 然后初始化当前包的常量 接下来初始化当前包的变量 最后，调用当前包的init函数     </description>
+    </item>
+    
     <item>
       <title>Go开发实用工具</title>
       <link>https://malphitee.github.io/notes/posts/go-develop-tools/</link>
