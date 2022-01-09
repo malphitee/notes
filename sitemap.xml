@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://malphitee.github.io/notes/categories/</loc>
+    <loc>https://malphitee.github.io/notes/posts/go-develop-tools/</loc>
+    <lastmod>2022-01-09T20:00:28+08:00</lastmod>
   </url><url>
     <loc>https://malphitee.github.io/notes/</loc>
+    <lastmod>2022-01-09T20:00:28+08:00</lastmod>
+  </url><url>
+    <loc>https://malphitee.github.io/notes/posts/</loc>
+    <lastmod>2022-01-09T20:00:28+08:00</lastmod>
+  </url><url>
+    <loc>https://malphitee.github.io/notes/categories/</loc>
   </url><url>
     <loc>https://malphitee.github.io/notes/tags/</loc>
   </url>

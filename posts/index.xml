@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LiuQ Notes</title>
-    <link>https://malphitee.github.io/notes/</link>
-    <description>Recent content on LiuQ Notes</description>
+    <title>Posts on LiuQ Notes</title>
+    <link>https://malphitee.github.io/notes/posts/</link>
+    <description>Recent content in Posts on LiuQ Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 09 Jan 2022 20:00:28 +0800</lastBuildDate><atom:link href="https://malphitee.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jan 2022 20:00:28 +0800</lastBuildDate><atom:link href="https://malphitee.github.io/notes/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go开发实用工具</title>
       <link>https://malphitee.github.io/notes/posts/go-develop-tools/</link>
